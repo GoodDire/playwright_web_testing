@@ -19,7 +19,7 @@ export class FormLayoutsPage extends HelperBase{
         await usingTheGridForm.getByRole('button', { name: 'Sign In' }).click();
     }
 
-    async submitBasicForm(email: string, password: string, checkMeOut: boolean) {
+    async submitBasicForm(name: string, email: string, password: string, checkMeOut: boolean) {
         const usingTheBasicForm = this.page.locator('nb-card', { hasText: 'Basic form' });
         await usingTheBasicForm.getByRole('textbox', { name: 'Email' }).fill(email);
         await usingTheBasicForm.getByRole('textbox', { name: 'Password' }).fill(password);

@@ -1,4 +1,6 @@
+import { HelperBase } from '../helpers/helperBase';
 import { test, expect } from '../Test Environment/base';
+
 
 test.beforeEach(async ({ page }) => {
     await page.goto('/');
@@ -15,15 +17,15 @@ test('should change the theme', async ({ page, homePage }) => {
     const header = page.locator('nb-layout-header');
 
     await homePage.changeTheme('Dark');
-    expect(header).toHaveCSS('background-color', colors.Light);
-
-    await homePage.changeTheme('Light');
     expect(header).toHaveCSS('background-color', colors.Dark);
+    
+    await homePage.changeTheme('Light');
+    expect(header).toHaveCSS('background-color', colors.Light);
 
     await homePage.changeTheme('Cosmic');
-    expect(header).toHaveCSS('background-color', colors.Corporate);
+    expect(header).toHaveCSS('background-color', colors.Cosmic);
 
     await homePage.changeTheme('Corporate');
-    expect(header).toHaveCSS('background-color', colors.Light);
+    expect(header).toHaveCSS('background-color', colors.Corporate);
 });
 
