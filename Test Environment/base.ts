@@ -1,12 +1,14 @@
 import { test as base } from '@playwright/test';
-import { NavigationPage } from '../pom/navigationPage';
-import { FormLayoutsPage } from '../pom/formLayoutsPage';
-import { DatePickerPage } from '../pom/datePickerPage';
+import { NavigationPage } from '../pages/navigationPage';
+import { FormLayoutsPage } from '../pages/formLayoutsPage';
+import { DatePickerPage } from '../pages/datePickerPage';
+import { HomePage } from '../pages/homePage';
 
 type TestFixtures = {
     navigationPage: NavigationPage;
     formLayoutsPage: FormLayoutsPage;
     datePickerPage: DatePickerPage;
+    homePage: HomePage;
 }
 
 export const test = base.extend<TestFixtures>({
@@ -18,6 +20,9 @@ export const test = base.extend<TestFixtures>({
     },
     datePickerPage: async ({ page }, use) => {
         await use(new DatePickerPage(page));
+    },
+    homePage: async ({ page }, use) => {
+        await use(new HomePage(page));
     }
 });
 

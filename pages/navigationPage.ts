@@ -5,7 +5,8 @@ export class NavigationPage extends HelperBase {
     readonly page: Page;
 
     constructor(page: Page) {
-        super(page)
+        super(page);
+        this.page = page;
     }
 
     private async selectGroupMenuItem(groupItemtTitle: string) {
