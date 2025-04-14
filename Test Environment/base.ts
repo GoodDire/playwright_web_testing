@@ -4,13 +4,14 @@ import { FormLayoutsPage } from '../pages/formLayoutsPage';
 import { DatePickerPage } from '../pages/datePickerPage';
 import { HomePage } from '../pages/homePage';
 import { DialogsPage } from '../pages/dialogsPage';
-
+import { SmartTablePage } from '../pages/smartTablePage';
 type TestFixtures = {
     navigationPage: NavigationPage;
     formLayoutsPage: FormLayoutsPage;
     datePickerPage: DatePickerPage;
     homePage: HomePage;
     dialogsPage: DialogsPage;
+    smartTablePage: SmartTablePage;
 }
 
 export const test = base.extend<TestFixtures>({
@@ -28,6 +29,9 @@ export const test = base.extend<TestFixtures>({
     },
     dialogsPage: async ({ page }, use) => {
         await use(new DialogsPage(page));
+    },
+    smartTablePage: async ({ page }, use) => {
+        await use(new SmartTablePage(page));
     }
 });
 
