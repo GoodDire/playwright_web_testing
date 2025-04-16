@@ -69,7 +69,7 @@ export class SmartTablePage extends HelperBase {
     }
 
     async validateColumn(columnNumber: number, value: string) {
-         const expectedRow = await expect(this.page.locator('td').nth(columnNumber)).toHaveText(value);
+        await expect(this.page.locator('td').nth(columnNumber)).toHaveText(value);
     }
 
     private async editField(fieldName: string, value: string): Promise<void> {

@@ -1,4 +1,3 @@
-import { pairs } from "rxjs";
 import { expect, test } from "../Test Environment/base";
 
 const userId = 61;
